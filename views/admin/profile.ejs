@@ -1,0 +1,39 @@
+<h3>Hello <%= user.username %></h3>
+
+<form action="/profile" method="POST">
+
+    <label for="phone"><b>Your Phone Number</b></label>
+    <input type="text" name="phone" value="<%=user.phone%>" />
+
+    <label for="email"><b>Your Email Adress</b></label>
+    <input type="email" name="email" value="<%=user.email%>" />
+
+    <input type="submit" value="Update" class="btn" />
+
+    <a class="registerBtn" href="/others">Authorized Information</a>
+
+</form>
+
+<hr/>
+
+<div class="admin-title">
+    <h3>Your last 20 transactions</h3>    
+</div>
+
+<ul class="admin-posts">
+    <% logs.forEach(log => { %>
+   
+        <li>
+            <p>
+                POST ID: <%= log.id %>
+            </p>
+            <p>
+                <%= log.method %>
+            </p>
+            <div class="admin-post-controls">
+                <a href="/log/<%= log._id %>" class="btn">Detail</a>
+            </div>
+        </li>
+
+    <% }) %>
+</ul>

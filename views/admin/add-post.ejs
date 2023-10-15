@@ -1,0 +1,23 @@
+<a href="/dashboard" style="display: inline;"><< Back</a>
+
+<div class="admin-title">
+    <h2>Add New Post</h2>
+</div>
+
+<form action="/add-post" method="POST" enctype="multipart/form-data">
+
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Enter Post Title" name="title" />
+
+    <label for="body"><b>Contents</b></label>
+    <textarea name="body" cols="50" rows="10" ></textarea>
+
+    <label for="postImage"><b>Post Photo:</b></label>
+    <input type="file" name="postImage" />
+    <br/><hr/>
+
+    <p class="error"><%= message %></p>
+
+    <input type="submit" value="Add" class="btn" />
+
+</form> 

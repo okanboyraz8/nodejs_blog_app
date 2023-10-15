@@ -1,0 +1,44 @@
+<a href="/profile" style="display: inline;"><< Back</a>
+
+<div class="admin-title">
+    <h3>Log Detail</h3>
+</div>
+
+<ul style="list-style-type: none;">
+    <li>
+        <b>Method:</b>
+        <span><%= log.method %></span>
+    </li>
+    <li>
+        <b>Username:</b>
+        <span><%= log.username %></span>
+    </li>
+    <li>
+        <b>Log Date:</b>
+        <span><%= log.createdAt.toLocaleString('tr-TR', {year: 'numeric', month: 'long', day: 'numeric'}) %></span>
+    </li>
+    <li>
+        <b style="font-weight: 900; margin: 20px">Old Data</b>
+    </li>
+
+    <li>
+        <% if (log.oldValue !== null) { %>
+            <ul>
+                <li>
+                    <b>Header:</b>
+                    <span><%= log.oldValue.title %></span>
+                </li>
+                <li>
+                    <b>Contents:</b>
+                    <span><%= log.oldValue.body %></span>
+                </li>
+                <li>
+                    <b>Created At:</b>
+                    <span><%= log.oldValue.createdAt.toLocaleString('tr-TR', {year: 'numeric', month: 'long', day: 'numeric'}) %></span>
+                </li>
+            </ul>         
+        <% } else { %>
+            There is no old value...
+        <% } %>
+    </li>
+</ul>
